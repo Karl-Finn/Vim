@@ -1,0 +1,69 @@
+set nocompatible              " required
+filetype off                  " required
+inoremap { {}<left>
+inoremap {{ {
+inoremap {} {}
+inoremap [ []<left>
+inoremap [[ [
+inoremap [] []
+inoremap ( ()<left>
+inoremap (( (
+inoremap () ()
+inoremap " ""<left>
+inoremap "" "
+inoremap ' ''<left>
+inoremap '' '
+
+syntax on
+set number
+set encoding=utf-8
+set shell=/bin/bash
+set tabstop=4
+set expandtab
+set autoindent
+
+let mapleader = ','
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+" Added NerdTree Plugin
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'preservim/tagbar'
+Plugin 'tpope/vim-sensible'
+Plugin 'itchyny/lightline.vim'
+Plugin 'joshdick/onedark.vim'
+Plugin 'ap/vim-buftabline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'dense-analysis/ale'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'maxmellon/vim-jsx-pretty'
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+" ...
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" NERDTree toggle on/off key settings
+noremap <Leader>n :NERDTreeToggle<CR>
+" Show NERDTree on VIM startup
+autocmd VimEnter * NERDTree
+
+"preservim/tagbar toggle on/off
+nmap <F8> :TagbarToggle<CR>
+
+colorscheme onedark
