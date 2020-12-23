@@ -21,6 +21,8 @@ set shell=/bin/bash
 set tabstop=4
 set expandtab
 set autoindent
+"Vim's current directory will be the one of the currently opened file
+set autochdir
 
 let mapleader = ','
 
@@ -37,7 +39,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jistr/vim-nerdtree-tabs'
-
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'preservim/tagbar'
 Plugin 'tpope/vim-sensible'
 Plugin 'itchyny/lightline.vim'
@@ -65,5 +67,16 @@ autocmd VimEnter * NERDTree
 
 "preservim/tagbar toggle on/off
 nmap <F8> :TagbarToggle<CR>
+
+
+"Mappings for moving between windows
+"Move to wondow on Left
+nnoremap <C-H> <C-W>h
+"Move to window on bottom/below
+nnoremap <C-J> <C-W>j
+"Move to window on top/above
+nnoremap <C-K> <C-W>k
+"Move to window to the right
+nnoremap <C-L> <C-W>l
 
 colorscheme onedark
